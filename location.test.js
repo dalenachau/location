@@ -57,9 +57,11 @@ describe('updateRemoteStudents', () => {
             { name: 'Hypatia', age: 31, location: 'leeds' },
             { name: 'Ramanujan', age: 22 },
             { name: 'Tao', age: 47, location: 'manchester' }];
-        expect(input).toEqual([
+        const inputCopy = [
             { name: 'Hypatia', age: 31, location: 'leeds' },
             { name: 'Ramanujan', age: 22 },
-            { name: 'Tao', age: 47, location: 'manchester' }]);
+            { name: 'Tao', age: 47, location: 'manchester' }];
+        updateRemoteStudents(input)
+        expect(input).toEqual(inputCopy);
     });
 });

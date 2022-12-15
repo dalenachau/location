@@ -22,14 +22,12 @@ updateRemoteStudents([
 ]; */
 
 function updateRemoteStudents(arr) {
-    let updated = [];
-    for (let i = 0; i < arr.length; i++) {
-        if (!arr[i].hasOwnProperty('location')) {
-            arr[i].location = 'remote'
-        }
-        updated.push(arr[i]);
-    }
-    return updated;
+  return arr.map((student) => {
+    const newStudent = {...student}
+    if (!newStudent.location) {
+      newStudent.location = "remote";
+    } return newStudent;
+  })
 }
 
 module.exports = updateRemoteStudents;
